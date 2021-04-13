@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "792618027361",
+    "firebase_url": "https://workando-156cf-default-rtdb.firebaseio.com",
+    "project_id": "workando-156cf",
+    "storage_bucket": "workando-156cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792618027361:android:9449cdada7016d5a325d20",
+        "android_client_info": {
+          "package_name": "com.v2.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792618027361-ftc8uenk2nsgi398jufn1cep41o8facd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.v2.chat",
+            "certificate_hash": "f3b424dcbda9d216ad93fee5533aa3f3ed6e3ce8"
+          }
+        },
+        {
+          "client_id": "792618027361-1qua89u8h3ovb293j0qv1rl8jrl9mmet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChvhU5XffmwUT5b5LUhJqDTJhPorqUcpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792618027361-1qua89u8h3ovb293j0qv1rl8jrl9mmet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
