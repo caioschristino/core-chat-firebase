@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.v2.chat.R;
 import com.v2.chat.core.ChatManager;
 import com.v2.chat.core.authentication.ChatAuthentication;
+import com.v2.chat.core.users.models.IChatUser;
 import com.v2.chat.utils.ChatUtils;
 
 
@@ -47,11 +48,11 @@ public abstract class ChatSplashActivity extends AppCompatActivity {
 
     private ChatAuthentication.OnAuthStateChangeListener onAuthStateChangeListener =
             new ChatAuthentication.OnAuthStateChangeListener() {
-        @Override
-        public void onAuthStateChanged(FirebaseUser user) {
-            runDispatch();
-        }
-    };
+                @Override
+                public void onAuthStateChanged(FirebaseUser user) {
+                    runDispatch();
+                }
+            };
 
     @Override
     final protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +101,14 @@ public abstract class ChatSplashActivity extends AppCompatActivity {
         Log.d(DEBUG_LOGIN, "ChatSplashActivity.runDispatch");
         // If current user has already logged in launch the target activity,
         // else launch the login activity
+        IChatUser loggedUser = ChatAuthentication.getInstance().convertFirebaseUserToChatUser(FirebaseAuth.getInstance().getCurrentUser());
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            ChatManager.Configuration mChatConfiguration =
+                    new ChatManager.Configuration.Builder(ChatManager.Configuration.appId)
+                            .build();
+            ChatManager.start(this, mChatConfiguration, loggedUser);
+            Log.i(DEBUG_LOGIN, "chat has been initialized with success");
+
             Log.d(DEBUG_LOGIN, "ChatSplashActivity.runDispatch: user is logged in. Goto : " + getTargetClass().getName());
             Intent targetIntent = new Intent(this, getTargetClass());
             Bundle extras = getIntent().getExtras();

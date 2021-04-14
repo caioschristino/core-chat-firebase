@@ -168,8 +168,6 @@ public class ChatLoginActivity extends AppCompatActivity implements View.OnClick
 
                                     ChatManager.Configuration mChatConfiguration =
                                             new ChatManager.Configuration.Builder(ChatManager.Configuration.appId)
-//                                                    .firebaseUrl(ChatManager.Configuration.firebaseUrl)
-//                                                    .storageBucket(ChatManager.Configuration.storageBucket)
                                                     .build();
                                     ChatManager.start(ChatLoginActivity.this, mChatConfiguration, loggedUser);
                                     Log.i(TAG, "chat has been initialized with success");

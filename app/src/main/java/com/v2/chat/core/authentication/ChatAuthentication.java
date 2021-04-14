@@ -273,7 +273,7 @@ public final class ChatAuthentication {
     }
 
 
-    private  IChatUser convertFirebaseUserToChatUser (FirebaseUser firebaseUser) {
+    public  IChatUser convertFirebaseUserToChatUser (FirebaseUser firebaseUser) {
         if (firebaseUser!=null){
             return new ChatUser(firebaseUser.getUid(), firebaseUser.getDisplayName());
         }else {
